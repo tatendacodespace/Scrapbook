@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Scrapbook – Chat 2</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        .placeholder-img {
+            width: 100%;
+            height: 180px;
+            background: repeating-linear-gradient(135deg, #b388ff 0 20px, #fffbe7 20px 40px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff69b4;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2em;
+            border-radius: 10px;
+        }
+        .page { display: block !important; position: relative; z-index: 1; }
+        .doodle { position: fixed; z-index: 2; pointer-events: auto; }
+        .bounce { animation: bounce 1.2s infinite alternate; }
+        @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body style="background: #fef6e4; overflow: hidden;">
+    <!-- Doodles and stickers outside the frame -->
+    <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 40px;">
+    <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+    <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+    <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+    <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
+    <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+    <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="left: 4vw; bottom: 18vh; width: 60px;">
+    <img src="../images/doodle-sticker-lol.svg" class="doodle" style="right: 6vw; top: 40vh; width: 48px;">
+    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="left: 20vw; top: 60vh; width: 48px;">
+    <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
+    <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
+    <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
+    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <!-- Main frame -->
+    <div class="page" style="box-shadow: 0 8px 32px rgba(179,136,255,0.10); border: 2px solid #ffb6b9; position: relative; min-height: 90vh;">
+        <img src="../images/paperclip.svg" style="position: absolute; right: 30px; top: 30px; width: 32px;">
+        <img src="../images/tape.svg" style="position: absolute; left: 40px; top: 80px; width: 60px; opacity: 0.8;">
+        <div class="polaroid" style="position: absolute; right: 15%; top: 20%; transform: rotate(7deg); width: 260px;">
+            <img src="../images/chat2.png" alt="Chat Screenshot" style="width: 100%; border-radius: 10px; display: none;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <div class="placeholder-img" style="display: flex;">Chat Screenshot Placeholder</div>
+            <p style="font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em;">"Dummy chat: Can't believe how much we have in common!"</p>
+        </div>
+        <div class="sticky-note" style="position: absolute; left: 12%; top: 65%; transform: rotate(-10deg); background: #b388ff; color: #fff;">I felt butterflies 🦋</div>
+        <div style="position: absolute; right: 60%; top: 35%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.3em; transform: rotate(10deg);">✨</div>
+        <div style="position: absolute; right: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(-4deg);">"Dummy note: Add your own sweet memory here!"</div>
+        <a href="love.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none;">Next &rarr;</a>
+    </div>
+</body>
+</html>

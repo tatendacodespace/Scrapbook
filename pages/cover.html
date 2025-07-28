@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Scrapbook – Since 2023 💌</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        .page { display: block !important; position: relative; z-index: 1; }
+        .doodle { position: fixed; z-index: 2; pointer-events: auto; }
+        .wiggle { animation: wiggle 1.2s infinite alternate; }
+        @keyframes wiggle { 0% { transform: rotate(-5deg); } 100% { transform: rotate(7deg); } }
+    </style>
+</head>
+<body style="background: linear-gradient(120deg, #f9c5d1 60%, #fef6e4 100%); overflow: hidden;">
+    <!-- Doodles and stickers outside the frame -->
+    <img src="../images/doodle-stars.svg" class="doodle wiggle" style="left: 2vw; top: 2vh; width: 40px;">
+    <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+    <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+    <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+    <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
+    <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+    <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="left: 4vw; bottom: 18vh; width: 60px;">
+    <img src="../images/doodle-sticker-lol.svg" class="doodle" style="right: 6vw; top: 40vh; width: 48px;">
+    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="left: 20vw; top: 60vh; width: 48px;">
+    <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
+    <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
+    <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
+    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <!-- Main frame -->
+    <div class="page cover" style="box-shadow: 0 8px 32px rgba(255,105,180,0.15); border: 3px dashed #ffb6b9; position: relative; min-height: 90vh;">
+        <h1 style="font-family: 'Caveat', cursive; font-size: 3em; color: #ff69b4; margin-top: 40px;">Our Scrapbook – Since 2023 💌</h1>
+        <img src="../images/heart.svg" style="position: absolute; left: 30px; top: 30px; width: 40px; transform: rotate(-15deg);">
+        <img src="../images/heart.svg" style="position: absolute; right: 40px; bottom: 40px; width: 30px; opacity: 0.7; transform: rotate(20deg);">
+        <img src="../images/paperclip.svg" style="position: absolute; right: 60px; top: 20px; width: 32px;">
+        <img src="../images/tape.svg" style="position: absolute; left: 60px; bottom: 20px; width: 60px; opacity: 0.8;">
+        <a href="chat1.html"><button id="start-flipping" style="margin-top: 60px; font-family: 'Patrick Hand', cursive; font-size: 1.5em; background: #fffbe7; color: #ff69b4; border: 2px solid #ffb6b9; border-radius: 12px; box-shadow: 2px 4px 12px #ffb6b9; padding: 18px 40px; cursor: pointer;">Start Exploring</button></a>
+        <div style="position: absolute; left: 10%; top: 70%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.2em; transform: rotate(-7deg);">DIY by Me 💡</div>
+        <div style="position: absolute; right: 12%; top: 20%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.5em; transform: rotate(8deg);">for you</div>
+    </div>
+</body>
+</html>

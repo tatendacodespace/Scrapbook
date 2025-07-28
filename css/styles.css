@@ -1,0 +1,183 @@
+/* General Styles */
+body {
+    font-family: 'Caveat', 'Patrick Hand', sans-serif;
+    background-color: #fef6e4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#flipbook {
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    display: flex; /* Make it visible */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    perspective: 1000px;
+}
+
+.page {
+    width: 90%;
+    max-width: 800px;
+    height: 90%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    margin: 20px auto;
+    padding: 20px;
+    display: none;
+    position: relative;
+}
+
+.page.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f9c5d1, #fef6e4);
+}
+
+.page .polaroid {
+    margin: 20px;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Paperclip and Tape Graphics */
+.polaroid::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background: url('../images/paperclip.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.polaroid::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    width: 50px;
+    height: 20px;
+    background: url('../images/tape.svg') no-repeat center center;
+    background-size: contain;
+}
+
+.page .sticky-note {
+    margin: 10px;
+    padding: 20px;
+    background: #ffeb3b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* Clickable Origami Elements */
+.origami {
+    margin: 20px;
+    padding: 20px;
+    background: #c5e1a5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.origami:hover {
+    transform: scale(1.1);
+}
+
+.page .origami {
+    margin: 20px;
+    padding: 20px;
+    background: #c5e1a5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.page .signature {
+    font-style: italic;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* Floating Hearts */
+.final-page {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.final-page .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('../images/heart.svg') no-repeat center center;
+    background-size: contain;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Hover Animations on Stickers or Notes */
+.sticky-note {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sticky-note:hover {
+    transform: rotate(-5deg);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove hover-based page flipping */
+.page:hover {
+    transform: none;
+}
+
+/* Style the 'Start Flipping' button */
+#start-flipping {
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-flipping:hover {
+    background-color: #ff85c0;
+}
