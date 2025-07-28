@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+        body { background: #fffbe7; }
+        .guestbook-form { margin: 60px auto; max-width: 400px; background: #fff; border-radius: 16px; box-shadow: 0 4px 16px #b388ff33; padding: 32px; position: relative; }
+        .guestbook-form label { font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.2em; }
+        .guestbook-form textarea { width: 100%; min-height: 80px; border-radius: 8px; border: 1px solid #b388ff; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 8px; margin-top: 8px; }
+        .guestbook-form button { margin-top: 16px; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; cursor: pointer; }
+        .guestbook-messages { margin-top: 32px; }
+        .guestbook-message { background: #f9c5d1; color: #b388ff; border-radius: 8px; padding: 12px; margin-bottom: 12px; font-family: 'Caveat', cursive; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <div class="guestbook-form">
+        <label for="message">Leave a message for me:</label>
+        <textarea id="message" placeholder="Type your message here..."></textarea>
+        <button onclick="saveMessage()">Send</button>
+        <div class="guestbook-messages" id="messages"></div>
+    </div>
+    <a href="cover.html" style="display:block; margin:32px auto 0 auto; text-align:center; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; width: fit-content;">Back to Scrapbook</a>
+    <script>
+        function saveMessage() {
+            const msg = document.getElementById('message').value.trim();
+            if (!msg) return;
+            let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
+            messages.push(msg);
+            localStorage.setItem('guestbook', JSON.stringify(messages));
+            document.getElementById('message').value = '';
+            renderMessages();
+        }
+        function renderMessages() {
+            let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
+            const container = document.getElementById('messages');
+            container.innerHTML = '';
+            messages.forEach(m => {
+                const div = document.createElement('div');
+                div.className = 'guestbook-message';
+                div.textContent = m;
+                container.appendChild(div);
+            });
+        }
+        renderMessages();
+    </script>
+</body>
+</html>

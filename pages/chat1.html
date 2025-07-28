@@ -40,6 +40,10 @@
     <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
     <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
     <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <img src="../images/photo-corner.svg" class="doodle" style="left: 13vw; top: 19vh; width: 24px;">
+    <img src="../images/photo-corner.svg" class="doodle" style="left: 28vw; top: 19vh; width: 24px; transform: scaleX(-1);">
+    <img src="../images/eraser-mark.svg" class="doodle" style="right: 12vw; top: 60vh; width: 40px;">
+    <img src="../images/underline.svg" class="doodle" style="left: 18vw; top: 85vh; width: 60px;">
     <!-- Main frame -->
     <div class="page" style="box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
         <img src="../images/paperclip.svg" style="position: absolute; left: 20px; top: 20px; width: 32px;">
@@ -53,6 +57,23 @@
         <div style="position: absolute; left: 60%; top: 30%; font-family: 'Caveat', cursive; color: #b388ff; font-size: 1.3em; transform: rotate(-10deg);">💬</div>
         <div style="position: absolute; left: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #ffb6b9; font-size: 1.1em; transform: rotate(5deg);">"Dummy note: This is where you can add your own message!"</div>
         <a href="chat2.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ffb6b9; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none;">Next &rarr;</a>
+        <!-- Animated doodle drawing itself on the Polaroid -->
+        <svg class="doodle" style="position:absolute; left:15%; top:30%; width:80px; z-index:3;" viewBox="0 0 40 20">
+          <path id="animatedScribble" d="M2 10 Q10 2 20 10 Q30 18 38 10" stroke="#b388ff" stroke-width="2" fill="none"/>
+        </svg>
+        <script>
+          // Animate the doodle path as if being drawn
+          window.addEventListener('DOMContentLoaded', function() {
+            var path = document.getElementById('animatedScribble');
+            if(path) {
+              var length = path.getTotalLength();
+              path.style.strokeDasharray = length;
+              path.style.strokeDashoffset = length;
+              path.style.transition = 'stroke-dashoffset 2s ease';
+              setTimeout(function() { path.style.strokeDashoffset = 0; }, 500);
+            }
+          });
+        </script>
     </div>
 </body>
 </html>
