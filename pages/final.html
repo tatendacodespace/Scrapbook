@@ -8,11 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
         body { overflow: hidden; }
-        .page { display: block !important; }
+        .page { display: block !important; position: relative; z-index: 1; }
+        .doodle { position: fixed; z-index: 2; pointer-events: auto; }
+        .bounce { animation: bounce 1.2s infinite alternate; }
+        @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
     </style>
 </head>
 <body style="background: #f9c5d1; overflow: hidden;">
-    <div class="page final-page" style="box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; position: relative;">
+    <!-- Doodles and stickers outside the frame -->
+    <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 40px;">
+    <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+    <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+    <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+    <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
+    <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+    <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="left: 4vw; bottom: 18vh; width: 60px;">
+    <img src="../images/doodle-sticker-lol.svg" class="doodle" style="right: 6vw; top: 40vh; width: 48px;">
+    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="left: 20vw; top: 60vh; width: 48px;">
+    <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
+    <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
+    <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
+    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <!-- Main frame -->
+    <div class="page final-page" style="box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
         <p style="font-family: 'Caveat', cursive; font-size: 2.2em; color: #b388ff; margin-top: 60px;">Thank you for being you. 💖</p>
         <p style="font-family: 'Patrick Hand', cursive; font-size: 1.7em; color: #ff69b4; margin-bottom: 40px;">So... can I be your boyfriend?</p>
         <p class="signature" style="font-family: 'Caveat', cursive; color: #b388ff; font-size: 1.3em; text-align: right; margin-right: 40px;">- Your admirer</p>
