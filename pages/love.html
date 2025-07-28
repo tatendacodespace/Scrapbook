@@ -42,5 +42,14 @@
         <div style="position: absolute; left: 15%; top: 80%; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; transform: rotate(3deg);">Dummy: Add your own note here!</div>
         <a href="dreams.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ffeb3b; color: #b388ff; border-radius: 8px; padding: 10px 24px; text-decoration: none;">Next &rarr;</a>
     </div>
+    <!-- Interactive flip note -->
+    <div id="flip-note" style="position:absolute; right: 8vw; top: 20vh; width: 120px; height: 40px; background: #fffbe7; color: #b388ff; border-radius: 8px; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 40px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 10;">Flip Me!</div>
+    <div id="flip-message" style="display:none; position:absolute; right: 8vw; top: 26vh; width: 200px; background: #ffeb3b; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 11;">Hidden note: You are truly one of a kind! 🌸</div>
+    <script>
+      document.getElementById('flip-note').onclick = function() {
+        var msg = document.getElementById('flip-message');
+        msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
+      };
+    </script>
 </body>
 </html>

@@ -56,5 +56,14 @@
         <div style="position: absolute; right: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(-4deg);">"Dummy note: Add your own sweet memory here!"</div>
         <a href="love.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none;">Next &rarr;</a>
     </div>
+    <!-- Interactive pull tab -->
+    <div id="pull-tab" style="position:absolute; left: 50vw; top: 80vh; width: 80px; height: 32px; background: #ffeb3b; color: #b388ff; border-radius: 16px 16px 0 0; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 32px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 10;">Pull Me!</div>
+    <div id="hidden-message" style="display:none; position:absolute; left: 50vw; top: 75vh; width: 220px; background: #fffbe7; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 11;">Secret message: You make my heart skip a beat! 💓</div>
+    <script>
+      document.getElementById('pull-tab').onclick = function() {
+        var msg = document.getElementById('hidden-message');
+        msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
+      };
+    </script>
 </body>
 </html>
