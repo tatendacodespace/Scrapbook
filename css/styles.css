@@ -181,3 +181,101 @@ body {
 #start-flipping:hover {
     background-color: #ff85c0;
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 600px) {
+  body, #app {
+    height: auto;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  .page, .final-page {
+    width: 98vw;
+    max-width: 100vw;
+    min-width: 0;
+    height: auto;
+    min-height: 90vh;
+    margin: 8px 0;
+    padding: 8vw 2vw 16vw 2vw;
+    box-sizing: border-box;
+  }
+  .page .polaroid, .page .sticky-note, .page .origami {
+    margin: 8px 0;
+    padding: 10px 4vw;
+    font-size: 1em;
+  }
+  .final-page .heart {
+    width: 16px;
+    height: 16px;
+  }
+  .doodle {
+    width: 32px !important;
+    min-width: 20px;
+    max-width: 48px;
+  }
+  .doodle[style*="width: 60px"] {
+    width: 36px !important;
+  }
+  .doodle[style*="width: 50px"] {
+    width: 28px !important;
+  }
+  .doodle[style*="width: 40px"] {
+    width: 24px !important;
+  }
+  .doodle[style*="width: 48px"] {
+    width: 28px !important;
+  }
+  .doodle[style*="width: 24px"] {
+    width: 16px !important;
+  }
+  .doodle[style*="width: 20px"] {
+    width: 12px !important;
+  }
+  .signature {
+    font-size: 1em !important;
+    margin-right: 10px !important;
+  }
+  .final-page p {
+    font-size: 1.2em !important;
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .final-page .signature {
+    font-size: 1em !important;
+    margin-right: 10px !important;
+  }
+  .final-page .heart {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .next-btn, a[href*="guestbook"] {
+    font-size: 1em !important;
+    padding: 8px 12vw !important;
+    border-radius: 6px !important;
+    left: 4% !important;
+    right: 4% !important;
+    bottom: 4vw !important;
+    min-width: 40vw;
+    max-width: 90vw;
+    box-sizing: border-box;
+  }
+  a[href*="guestbook"] {
+    left: auto !important;
+    right: 4% !important;
+  }
+  .page .sticky-note, .page .origami {
+    font-size: 1em !important;
+    padding: 8px 4vw !important;
+  }
+  .page .origami {
+    min-width: 0;
+    width: 90vw;
+    max-width: 98vw;
+  }
+  /* Hide or reposition some doodles if they overlap content */
+  .doodle {
+    z-index: 1 !important;
+  }
+}
