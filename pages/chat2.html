@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Scrapbook – Chat 2</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6DQD1P1L1iieaFf/nJGzIxFDsf4x0xIM+B07jRMXj6l" crossorigin="anonymous">
+    <style>
+        .placeholder-img {
+            width: 100%;
+            height: 180px;
+            background: repeating-linear-gradient(135deg, #b388ff 0 20px, #fffbe7 20px 40px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff69b4;
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.2em;
+            border-radius: 10px;
+        }
+        .page { display: block !important; position: relative; z-index: 1; }
+        .doodle { position: fixed; z-index: 2; pointer-events: auto; }
+        .bounce { animation: bounce 1.2s infinite alternate; }
+        @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+        /* Paper airplane animation styles */
+        .paper-airplane-container {
+            position: fixed;
+            top: 50px;
+            right: 10vw;
+            width: 120vw;
+            height: 20px;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .paper-trail {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            overflow: hidden;
+        }
+        .paper-airplane {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            animation: fly 3s linear infinite;
+        }
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0); }
+            100% { transform: translate(-100vw, -20px) rotate(-20deg); }
+        }
+    </style>
+</head>
+<body style="background: #fef6e4; overflow: hidden;">
+    <!-- Desktop Layout -->
+    <div class="desktop-only">
+        <!-- Doodles and stickers outside the frame -->
+        <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 40px;">
+        <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+        <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+        <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+        <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
+        <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+        <img src="../images/crossout.svg" class="doodle" style="left: 22vw; top: 30vh; width: 40px;">
+        <img src="../images/scribble.svg" class="doodle" style="right: 18vw; bottom: 12vh; width: 40px;">
+        <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
+        <img src="../images/doodle-envelope.svg" class="doodle movable" style="right: 16vw; top: 80vh; width: 40px;">
+        <img src="../images/doodle-washi.svg" class="doodle movable" style="left: 40vw; bottom: 2vh; width: 60px;">
+        <!-- Meaningful stickers -->
+        <div class="doodle movable" style="left: 12vw; top: 70vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">You are precious and honored in my sight. <span style='font-size:0.8em;'>(Isaiah 43:4)</span></div>
+        <div class="doodle movable" style="right: 10vw; top: 18vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">You + Me = 💖</div>
+        <!-- Main frame -->
+        <div class="page" style="box-shadow: 0 8px 32px rgba(179,136,255,0.10); border: 2px solid #ffb6b9; position: relative; min-height: 90vh;">
+            <img src="../images/paperclip.svg" style="position: absolute; right: 30px; top: 30px; width: 32px;">
+            <img src="../images/tape.svg" style="position: absolute; left: 40px; top: 80px; width: 60px; opacity: 0.8;">
+            <div class="polaroid" style="position: absolute; left: 10%; top: 20%; transform: rotate(-7deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -7deg;">
+        <!-- Story block: Getting to know you -->
+            <!-- ...rest of desktop content unchanged... -->
+        </div>
+    </div>
+    <!-- Mobile Layout -->
+    <div class="mobile-only" style="overflow-y: auto; min-height: 100vh; background: #fef6e4;">
+        <!-- Doodles and stickers (mobile) -->
+        <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 32px;">
+        <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 24px;">
+        <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 36px;">
+        <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 24px;">
+        <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 18px;">
+        <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 28px;">
+        <img src="../images/crossout.svg" class="doodle" style="left: 22vw; top: 30vh; width: 28px;">
+        <img src="../images/scribble.svg" class="doodle" style="right: 18vw; bottom: 12vh; width: 28px;">
+        <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 16px;">
+        <img src="../images/doodle-envelope.svg" class="doodle movable" style="right: 16vw; top: 80vh; width: 28px;">
+        <img src="../images/doodle-washi.svg" class="doodle movable" style="left: 40vw; bottom: 2vh; width: 36px;">
+        <!-- Meaningful stickers (mobile) -->
+        <div class="doodle movable" style="left: 12vw; top: 70vh; width: 90px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 12px; padding: 4px 10px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 0.9em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">You are precious and honored in my sight. <span style='font-size:0.7em;'>(Isaiah 43:4)</span></div>
+        <div class="doodle movable" style="right: 10vw; top: 18vh; width: 90px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 12px; padding: 4px 10px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">You + Me = 💖</div>
+        <!-- Main frame (mobile stacked) -->
+        <div class="page" style="box-shadow: 0 4px 16px rgba(179,136,255,0.10); border: 2px solid #ffb6b9; position: relative; min-height: 90vh; margin: 0 0 32px 0; padding: 0 0 32px 0; background: #fef6e4;">
+            <img src="../images/paperclip.svg" style="position: absolute; right: 16px; top: 16px; width: 22px;">
+            <img src="../images/tape.svg" style="position: absolute; left: 16px; top: 40px; width: 36px; opacity: 0.8;">
+            <div class="polaroid" style="position: static; margin: 24px auto 0 auto; width: 90vw; max-width: 220px; box-shadow: 0 4px 12px #b388ff55, 0 0 0 4px #fffbe7; border: 2px solid #e0c3fc; border-radius: 8px 18px 12px 6px/12px 8px 18px 6px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -7deg;">
+                <!-- Insert polaroid image and caption here as in desktop, but stacked -->
+            </div>
+            <!-- Add other story blocks and sticky notes stacked vertically for mobile -->
+        </div>
+    </div>
+        <!-- Story block: Getting to know you -->
+        <div style="position: absolute; right: 8%; top: 10%; max-width: 340px; font-family: 'Caveat', cursive; font-size: 1.5em; color: #b388ff; background: #fffbe7; border-radius: 16px; padding: 18px 24px; box-shadow: 0 2px 12px #b388ff22;">The more I got to know you, the more I realized how rare you are. You’re thoughtful, funny, and you make every day brighter. I’m grateful for every moment we share.</div>
+            <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+            <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Serious face? Never heard of it 😏</div>
+        </div>
+        <div class="polaroid" style="position: absolute; left: 60%; top: 30%; transform: rotate(4deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.35s; --polaroid-rotate: 4deg;">
+            <video src="../images/ntokivid2.mp4" muted autoplay loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px #b388ff55;"></video>
+            <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Dancing queen 💃</div>
+        </div>
+        <!-- All interactive buttons/text moved below polaroids for z-index stacking -->
+        <div class="sticky-note" style="position: absolute; left: 12%; top: 65%; transform: rotate(-10deg); background: #b388ff; color: #fff; z-index: 10;">I felt butterflies 🦋</div>
+        <div style="position: absolute; right: 60%; top: 35%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.3em; transform: rotate(10deg); z-index: 10;">✨</div>
+        <div style="position: absolute; right: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(-4deg); z-index: 10;">"Dummy note: Add your own sweet memory here!"</div>
+        <a href="sidequest.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none;">Next &rarr;</a>
+    </div>
+    <!-- Interactive pull tab -->
+    <div id="pull-tab" style="position:fixed; right: 4vw; top: 12vh; width: 100px; height: 36px; background: #ffeb3b; color: #b388ff; border-radius: 18px 18px 0 0; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 36px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Pull Me!</div>
+    <div id="hidden-message" style="display:none; position:fixed; right: 4vw; top: 18vh; width: 240px; background: #fffbe7; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Secret message: You make my heart skip a beat! 💓</div>
+    <script>
+      document.getElementById('pull-tab').onclick = function() {
+        var msg = document.getElementById('hidden-message');
+        msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
+      };
+      function randomMoveDoodles() {
+        document.querySelectorAll('.doodle.movable').forEach(function(el) {
+          let x = Math.random() * (window.innerWidth - el.width);
+          let y = Math.random() * (window.innerHeight - el.height);
+          el.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+      setInterval(randomMoveDoodles, 3500);
+      function randomizeAirplane() {
+        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
+        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
+          el.style.setProperty('--airplane-top', top);
+        });
+      }
+      randomizeAirplane();
+    </script>
+</body>
+</html>
