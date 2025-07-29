@@ -182,6 +182,30 @@ body {
     background-color: #ff85c0;
 }
 
+/* Polaroid drop-in animation */
+@keyframes polaroidDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px) scale(0.95) rotate(-10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1.03) rotate(3deg);
+  }
+  80% {
+    transform: translateY(-4px) scale(1.01) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(var(--polaroid-rotate, 0deg));
+  }
+}
+.polaroid {
+  opacity: 0;
+  animation: polaroidDrop 1.1s cubic-bezier(.23,1.12,.62,1) forwards;
+  animation-delay: var(--polaroid-delay, 0.1s);
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 600px) {
   body, #app {
