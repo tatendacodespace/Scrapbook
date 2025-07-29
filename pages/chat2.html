@@ -24,6 +24,36 @@
         .doodle { position: fixed; z-index: 2; pointer-events: auto; }
         .bounce { animation: bounce 1.2s infinite alternate; }
         @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+        /* Paper airplane animation styles */
+        .paper-airplane-container {
+            position: fixed;
+            top: 50px;
+            right: 10vw;
+            width: 120vw;
+            height: 20px;
+            pointer-events: none;
+            z-index: 3;
+        }
+        .paper-trail {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            overflow: hidden;
+        }
+        .paper-airplane {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            animation: fly 3s linear infinite;
+        }
+        @keyframes fly {
+            0% { transform: translate(0, 0) rotate(0); }
+            100% { transform: translate(-100vw, -20px) rotate(-20deg); }
+        }
     </style>
 </head>
 <body style="background: #fef6e4; overflow: hidden;">
@@ -47,11 +77,11 @@
     <div class="page" style="box-shadow: 0 8px 32px rgba(179,136,255,0.10); border: 2px solid #ffb6b9; position: relative; min-height: 90vh;">
         <img src="../images/paperclip.svg" style="position: absolute; right: 30px; top: 30px; width: 32px;">
         <img src="../images/tape.svg" style="position: absolute; left: 40px; top: 80px; width: 60px; opacity: 0.8;">
-        <div class="polaroid" style="position: absolute; left: 10%; top: 20%; transform: rotate(-7deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible;">
+        <div class="polaroid" style="position: absolute; left: 10%; top: 20%; transform: rotate(-7deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -7deg;">
             <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
             <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Serious face? Never heard of it 😏</div>
         </div>
-        <div class="polaroid" style="position: absolute; left: 60%; top: 30%; transform: rotate(4deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible;">
+        <div class="polaroid" style="position: absolute; left: 60%; top: 30%; transform: rotate(4deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.35s; --polaroid-rotate: 4deg;">
             <video src="../images/ntokivid2.mp4" muted autoplay loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px #b388ff55;"></video>
             <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Dancing queen 💃</div>
         </div>
@@ -64,6 +94,15 @@
     <!-- Interactive pull tab -->
     <div id="pull-tab" style="position:fixed; right: 4vw; top: 12vh; width: 100px; height: 36px; background: #ffeb3b; color: #b388ff; border-radius: 18px 18px 0 0; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 36px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Pull Me!</div>
     <div id="hidden-message" style="display:none; position:fixed; right: 4vw; top: 18vh; width: 240px; background: #fffbe7; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Secret message: You make my heart skip a beat! 💓</div>
+    <!-- Paper airplane animation -->
+    <div class="paper-airplane-container">
+      <span class="paper-trail">
+        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+        </svg>
+      </span>
+      <img class="paper-airplane" src="../images/paper-airplane.svg" alt="Paper Airplane">
+    </div>
     <script>
       document.getElementById('pull-tab').onclick = function() {
         var msg = document.getElementById('hidden-message');

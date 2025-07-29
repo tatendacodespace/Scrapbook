@@ -206,6 +206,50 @@ body {
   animation-delay: var(--polaroid-delay, 0.1s);
 }
 
+/* Paper airplane animation */
+.paper-airplane-container {
+  position: fixed;
+  top: 12vh;
+  left: -80px;
+  width: 120vw;
+  height: 80px;
+  pointer-events: none;
+  z-index: 1000;
+}
+.paper-airplane {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  animation: airplaneFly 2.2s cubic-bezier(.7,.1,.7,1) 1;
+}
+.paper-trail {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  width: 120vw;
+  height: 20px;
+  pointer-events: none;
+  z-index: 999;
+}
+@keyframes airplaneFly {
+  0% { left: 0; top: 0; opacity: 0; }
+  10% { opacity: 1; }
+  60% { left: 60vw; top: 10px; opacity: 1; }
+  80% { left: 90vw; top: 30px; opacity: 1; }
+  100% { left: 110vw; top: 60px; opacity: 0; }
+}
+@keyframes trailFade {
+  0% { opacity: 0; }
+  10% { opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+.paper-trail svg {
+  animation: trailFade 2.2s linear 1;
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 600px) {
   body, #app {

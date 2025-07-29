@@ -43,14 +43,23 @@
         <div style="position: absolute; left: 15%; top: 80%; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; transform: rotate(3deg);">Dummy: Add your own note here!</div>
     </div>
     <!-- Polaroid element -->
-    <div class="polaroid" style="position: absolute; right: 12%; top: 40%; transform: rotate(6deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible;">
+    <div class="polaroid" style="position: absolute; right: 12%; top: 40%; transform: rotate(6deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: 6deg;">
         <img src="../images/ntoki2.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
         <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Heart stealer 💘</div>
     </div>
-    <!-- Interactive flip note and buttons/text moved below polaroids for z-index stacking -->
+    <!-- All interactive buttons/text moved below polaroids for z-index stacking -->
     <div id="flip-note" style="position:fixed; left: 4vw; top: 12vh; width: 120px; height: 40px; background: #fffbe7; color: #b388ff; border-radius: 8px; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 40px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Flip Me!</div>
     <div id="flip-message" style="display:none; position:fixed; left: 4vw; top: 18vh; width: 220px; background: #ffeb3b; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Hidden note: You are truly one of a kind! 🌸</div>
     <a href="dreams.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ffeb3b; color: #b388ff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 102;">Next &rarr;</a>
+    <!-- Paper airplane animation -->
+    <div class="paper-airplane-container">
+      <span class="paper-trail">
+        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+        </svg>
+      </span>
+      <img class="paper-airplane" src="../images/paper-airplane.svg" alt="Paper Airplane">
+    </div>
     <script>
       document.getElementById('flip-note').onclick = function() {
         var msg = document.getElementById('flip-message');
