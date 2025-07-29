@@ -15,53 +15,19 @@
     </style>
 </head>
 <body style="background: #fffbe7; overflow: hidden;">
-    <!-- Doodles and stickers (desktop only) -->
-    <img src="../images/doodle-stars.svg" class="doodle bounce desktop-only" style="left: 2vw; top: 2vh; width: 40px;">
-    <img src="../images/doodle-heart.svg" class="doodle desktop-only" style="right: 4vw; top: 8vh; width: 32px;">
-    <img src="../images/doodle-arrow.svg" class="doodle desktop-only" style="left: 8vw; bottom: 6vh; width: 50px;">
-    <img src="../images/doodle-flower.svg" class="doodle desktop-only" style="right: 10vw; bottom: 10vh; width: 32px;">
-    <img src="../images/doodle-sparkle.svg" class="doodle desktop-only" style="left: 50vw; top: 4vh; width: 24px;">
-    <img src="../images/doodle-confetti.svg" class="doodle desktop-only" style="right: 2vw; top: 60vh; width: 40px;">
-    <img src="../images/pressed-flower.svg" class="doodle movable desktop-only" style="right: 8vw; top: 60vh; width: 40px;">
-    <!-- Mobile-only doodles row -->
-    <div class="doodle-row mobile-only" style="display:none; justify-content: center; align-items: center; gap: 10px; width: 100%; max-width: 420px; margin: 0 auto 8px auto;">
-      <img src="../images/doodle-stars.svg" class="doodle bounce" style="width: 28px;">
-      <img src="../images/doodle-heart.svg" class="doodle" style="width: 24px;">
-      <img src="../images/doodle-arrow.svg" class="doodle" style="width: 28px;">
-      <img src="../images/doodle-flower.svg" class="doodle" style="width: 24px;">
-    </div>
+    <!-- Doodles and stickers outside the frame -->
+    <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 40px;">
+    <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+    <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+    <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+    <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
+    <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+    <img src="../images/pressed-flower.svg" class="doodle movable" style="right: 8vw; top: 60vh; width: 40px;">
     <!-- Meaningful stickers -->
     <div class="doodle movable" style="left: 8vw; top: 60vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">Love never fails. <span style='font-size:0.8em;'>(1 Corinthians 13:8)</span></div>
     <div class="doodle movable" style="right: 12vw; top: 10vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">You make my heart smile 😊</div>
     <!-- Main frame -->
     <div class="page" style="box-shadow: 0 8px 32px rgba(255,235,59,0.10); border: 2px dashed #ffeb3b; position: relative; min-height: 90vh;">
-      <!-- Mobile-only layout -->
-      <div class="love-mobile mobile-only" style="display:none; flex-direction: column; align-items: center; width: 100%; max-width: 420px; margin: 0 auto;">
-        <h2 style="font-family: 'Caveat', cursive; color: #b388ff; margin-top: 24px; font-size: 1.5em; text-align: center;">Things I Love About You</h2>
-        <div style="font-family: 'Patrick Hand', cursive; font-size: 1em; color: #b388ff; background: #fffbe7; border-radius: 14px; padding: 12px 6vw; margin: 12px auto 0 auto; max-width: 98vw; box-shadow: 0 2px 12px #b388ff22; text-align: center; position: relative; z-index: 10;">There’s so much I love about you—your smile, your kindness, your sense of humor. You make my world a better place just by being in it.</div>
-        <div class="polaroid" style="width: 90vw; max-width: 320px; margin: 18px auto 0 auto;">
-            <img src="../images/ntoki2.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
-            <div style="position: relative; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Heart stealer 💘</div>
-        </div>
-        <div class="sticky-note" style="margin: 18px auto 0 auto; background: #ffeb3b; color: #b388ff; width: 90vw; max-width: 320px; text-align: center;">Your smile</div>
-        <div class="sticky-note" style="margin: 8px auto 0 auto; background: #fffbe7; color: #ff69b4; width: 90vw; max-width: 320px; text-align: center;">Your kindness</div>
-        <div class="sticky-note" style="margin: 8px auto 0 auto; background: #b388ff; color: #fff; width: 90vw; max-width: 320px; text-align: center;">Your sense of humor</div>
-        <div class="sticky-note" style="margin: 8px auto 0 auto; background: #fffbe7; color: #b388ff; width: 90vw; max-width: 320px; text-align: center;">Dummy: Your creativity</div>
-        <div style="font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1em; margin: 12px auto 0 auto; text-align: center;">🌸</div>
-        <div style="font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1em; margin: 8px auto 0 auto; text-align: center;">You make my days brighter!</div>
-        <div style="font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1em; margin: 8px auto 0 auto; text-align: center;">Dummy: Add your own note here!</div>
-        <a href="dreams.html" class="next-btn" style="margin: 24px auto 0 auto; display: block; font-family: 'Patrick Hand', cursive; font-size: 1em; background: #ffeb3b; color: #b388ff; border-radius: 8px; padding: 12px 18px; text-decoration: none; width: 90vw; max-width: 320px; text-align: center;">Next &rarr;</a>
-      </div>
-    <style>
-      @media (max-width: 600px) {
-        .desktop-only { display: none !important; }
-        .mobile-only { display: flex !important; }
-      }
-      @media (min-width: 601px) {
-        .desktop-only { display: initial !important; }
-        .mobile-only { display: none !important; }
-      }
-    </style>
         <div class="sticky-note" style="position: absolute; left: 10%; top: 20%; transform: rotate(-8deg); background: #ffeb3b; color: #b388ff;">Your smile</div>
         <div class="sticky-note" style="position: absolute; right: 15%; top: 35%; transform: rotate(6deg); background: #fffbe7; color: #ff69b4;">Your kindness</div>
         <div class="sticky-note" style="position: absolute; left: 30%; top: 60%; transform: rotate(-12deg); background: #b388ff; color: #fff;">Your sense of humor</div>
