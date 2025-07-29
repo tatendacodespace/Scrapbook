@@ -46,6 +46,10 @@
     <!-- Interactive flip note -->
     <div id="flip-note" style="position:fixed; left: 4vw; top: 12vh; width: 120px; height: 40px; background: #fffbe7; color: #b388ff; border-radius: 8px; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 40px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Flip Me!</div>
     <div id="flip-message" style="display:none; position:fixed; left: 4vw; top: 18vh; width: 220px; background: #ffeb3b; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Hidden note: You are truly one of a kind! 🌸</div>
+    <div class="polaroid" style="position: absolute; right: 12%; top: 40%; transform: rotate(6deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible;">
+        <img src="../images/ntoki2.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+        <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Heart stealer 💘</div>
+    </div>
     <script>
       document.getElementById('flip-note').onclick = function() {
         var msg = document.getElementById('flip-message');
