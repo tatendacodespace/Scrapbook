@@ -250,6 +250,49 @@ body {
   animation: trailFade 2.2s linear 1;
 }
 
+/* Doodle random movement */
+.doodle.movable {
+  position: fixed;
+  will-change: transform;
+  transition: transform 0.2s linear;
+  z-index: 2;
+}
+
+/* Paper airplane SVG animation */
+.paper-airplane-svg {
+  position: fixed;
+  left: 0;
+  top: var(--airplane-top, 12vh);
+  width: 60px;
+  height: 60px;
+  z-index: 1000;
+  pointer-events: none;
+  animation: airplaneFlySVG 2.2s cubic-bezier(.7,.1,.7,1) 1;
+}
+@keyframes airplaneFlySVG {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  60% { left: 60vw; opacity: 1; }
+  80% { left: 90vw; opacity: 1; }
+  100% { left: 110vw; opacity: 0; }
+}
+.paper-airplane-trail {
+  position: fixed;
+  left: 0;
+  top: calc(var(--airplane-top, 12vh) + 30px);
+  width: 120vw;
+  height: 20px;
+  pointer-events: none;
+  z-index: 999;
+  animation: trailFadeSVG 2.2s linear 1;
+}
+@keyframes trailFadeSVG {
+  0% { opacity: 0; }
+  10% { opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
+
 /* Responsive Design for Mobile */
 @media (max-width: 600px) {
   body, #app {

@@ -64,20 +64,21 @@
     <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
     <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
     <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
-    <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="left: 4vw; bottom: 18vh; width: 60px;">
     <img src="../images/crossout.svg" class="doodle" style="left: 22vw; top: 30vh; width: 40px;">
     <img src="../images/scribble.svg" class="doodle" style="right: 18vw; bottom: 12vh; width: 40px;">
-    <img src="../images/doodle-sticker-lol.svg" class="doodle" style="left: 10vw; top: 70vh; width: 48px;">
-    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="left: 20vw; top: 60vh; width: 48px;">
-    <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
     <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
-    <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
-    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <img src="../images/doodle-envelope.svg" class="doodle movable" style="right: 16vw; top: 80vh; width: 40px;">
+    <img src="../images/doodle-washi.svg" class="doodle movable" style="left: 40vw; bottom: 2vh; width: 60px;">
+    <!-- Meaningful stickers -->
+    <div class="doodle movable" style="left: 12vw; top: 70vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">You are precious and honored in my sight. <span style='font-size:0.8em;'>(Isaiah 43:4)</span></div>
+    <div class="doodle movable" style="right: 10vw; top: 18vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">You + Me = 💖</div>
     <!-- Main frame -->
     <div class="page" style="box-shadow: 0 8px 32px rgba(179,136,255,0.10); border: 2px solid #ffb6b9; position: relative; min-height: 90vh;">
         <img src="../images/paperclip.svg" style="position: absolute; right: 30px; top: 30px; width: 32px;">
         <img src="../images/tape.svg" style="position: absolute; left: 40px; top: 80px; width: 60px; opacity: 0.8;">
         <div class="polaroid" style="position: absolute; left: 10%; top: 20%; transform: rotate(-7deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -7deg;">
+        <!-- Story block: Getting to know you -->
+        <div style="position: absolute; right: 8%; top: 10%; max-width: 340px; font-family: 'Caveat', cursive; font-size: 1.5em; color: #b388ff; background: #fffbe7; border-radius: 16px; padding: 18px 24px; box-shadow: 0 2px 12px #b388ff22;">The more I got to know you, the more I realized how rare you are. You’re thoughtful, funny, and you make every day brighter. I’m grateful for every moment we share.</div>
             <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
             <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Serious face? Never heard of it 😏</div>
         </div>
@@ -94,20 +95,26 @@
     <!-- Interactive pull tab -->
     <div id="pull-tab" style="position:fixed; right: 4vw; top: 12vh; width: 100px; height: 36px; background: #ffeb3b; color: #b388ff; border-radius: 18px 18px 0 0; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 36px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Pull Me!</div>
     <div id="hidden-message" style="display:none; position:fixed; right: 4vw; top: 18vh; width: 240px; background: #fffbe7; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Secret message: You make my heart skip a beat! 💓</div>
-    <!-- Paper airplane animation -->
-    <div class="paper-airplane-container">
-      <span class="paper-trail">
-        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
-        </svg>
-      </span>
-      <img class="paper-airplane" src="../images/paper-airplane.svg" alt="Paper Airplane">
-    </div>
     <script>
       document.getElementById('pull-tab').onclick = function() {
         var msg = document.getElementById('hidden-message');
         msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
       };
+      function randomMoveDoodles() {
+        document.querySelectorAll('.doodle.movable').forEach(function(el) {
+          let x = Math.random() * (window.innerWidth - el.width);
+          let y = Math.random() * (window.innerHeight - el.height);
+          el.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+      setInterval(randomMoveDoodles, 3500);
+      function randomizeAirplane() {
+        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
+        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
+          el.style.setProperty('--airplane-top', top);
+        });
+      }
+      randomizeAirplane();
     </script>
 </body>
 </html>

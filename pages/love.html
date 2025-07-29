@@ -22,28 +22,24 @@
     <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
     <img src="../images/doodle-sparkle.svg" class="doodle" style="left: 50vw; top: 4vh; width: 24px;">
     <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
-    <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="left: 4vw; bottom: 18vh; width: 60px;">
-    <img src="../images/doodle-sticker-lol.svg" class="doodle" style="right: 6vw; top: 40vh; width: 48px;">
-    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="left: 20vw; top: 60vh; width: 48px;">
-    <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
-    <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
-    <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
-    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
-    <img src="../images/pressed-flower.svg" class="doodle" style="right: 8vw; top: 60vh; width: 40px;">
-    <img src="../images/photo-corner.svg" class="doodle" style="left: 18vw; top: 25vh; width: 24px;">
-    <img src="../images/doodle-sticker-aww.svg" class="doodle" style="right: 12vw; top: 80vh; width: 48px;">
+    <img src="../images/pressed-flower.svg" class="doodle movable" style="right: 8vw; top: 60vh; width: 40px;">
+    <!-- Meaningful stickers -->
+    <div class="doodle movable" style="left: 8vw; top: 60vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">Love never fails. <span style='font-size:0.8em;'>(1 Corinthians 13:8)</span></div>
+    <div class="doodle movable" style="right: 12vw; top: 10vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">You make my heart smile 😊</div>
     <!-- Main frame -->
     <div class="page" style="box-shadow: 0 8px 32px rgba(255,235,59,0.10); border: 2px dashed #ffeb3b; position: relative; min-height: 90vh;">
         <div class="sticky-note" style="position: absolute; left: 10%; top: 20%; transform: rotate(-8deg); background: #ffeb3b; color: #b388ff;">Your smile</div>
         <div class="sticky-note" style="position: absolute; right: 15%; top: 35%; transform: rotate(6deg); background: #fffbe7; color: #ff69b4;">Your kindness</div>
         <div class="sticky-note" style="position: absolute; left: 30%; top: 60%; transform: rotate(-12deg); background: #b388ff; color: #fff;">Your sense of humor</div>
         <div class="sticky-note" style="position: absolute; right: 20%; top: 70%; transform: rotate(5deg); background: #fffbe7; color: #b388ff;">Dummy: Your creativity</div>
+        <!-- Story block: What I love about you -->
+        <div style="position: absolute; left: 8%; top: 10%; max-width: 340px; font-family: 'Caveat', cursive; font-size: 1.5em; color: #b388ff; background: #fffbe7; border-radius: 16px; padding: 18px 24px; box-shadow: 0 2px 12px #b388ff22; z-index: 15;">There’s so much I love about you—your smile, your kindness, your sense of humor. You make my world a better place just by being in it.</div>
         <div style="position: absolute; right: 10%; top: 10%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.5em; transform: rotate(10deg);">🌸</div>
         <div style="position: absolute; left: 60%; top: 70%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.2em; transform: rotate(-7deg);">You make my days brighter!</div>
         <div style="position: absolute; left: 15%; top: 80%; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; transform: rotate(3deg);">Dummy: Add your own note here!</div>
     </div>
-    <!-- Polaroid element -->
-    <div class="polaroid" style="position: absolute; right: 12%; top: 40%; transform: rotate(6deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: 6deg;">
+    <!-- Move polaroid outside the main frame so it appears above the frame visually -->
+    <div class="polaroid" style="position: absolute; right: 12%; top: 40%; transform: rotate(6deg); width: 200px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; z-index: 20;">
         <img src="../images/ntoki2.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
         <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Heart stealer 💘</div>
     </div>
@@ -51,20 +47,27 @@
     <div id="flip-note" style="position:fixed; left: 4vw; top: 12vh; width: 120px; height: 40px; background: #fffbe7; color: #b388ff; border-radius: 8px; font-family: 'Patrick Hand', cursive; text-align: center; line-height: 40px; cursor: pointer; box-shadow: 0 2px 8px #b388ff44; z-index: 100;">Flip Me!</div>
     <div id="flip-message" style="display:none; position:fixed; left: 4vw; top: 18vh; width: 220px; background: #ffeb3b; color: #ff69b4; border: 2px dashed #b388ff; border-radius: 12px; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 16px; z-index: 101;">Hidden note: You are truly one of a kind! 🌸</div>
     <a href="dreams.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ffeb3b; color: #b388ff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 102;">Next &rarr;</a>
-    <!-- Paper airplane animation -->
-    <div class="paper-airplane-container">
-      <span class="paper-trail">
-        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
-        </svg>
-      </span>
-      <img class="paper-airplane" src="../images/paper-airplane.svg" alt="Paper Airplane">
-    </div>
+    <a href="dreams.html" class="next-btn" style="position: fixed; right: 8vw; bottom: 4vh; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ffeb3b; color: #b388ff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 20;">Next &rarr;</a>
     <script>
       document.getElementById('flip-note').onclick = function() {
         var msg = document.getElementById('flip-message');
         msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
       };
+      function randomMoveDoodles() {
+        document.querySelectorAll('.doodle.movable').forEach(function(el) {
+          let x = Math.random() * (window.innerWidth - el.width);
+          let y = Math.random() * (window.innerHeight - el.height);
+          el.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+      setInterval(randomMoveDoodles, 3500);
+      function randomizeAirplane() {
+        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
+        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
+          el.style.setProperty('--airplane-top', top);
+        });
+      }
+      randomizeAirplane();
     </script>
 </body>
 </html>

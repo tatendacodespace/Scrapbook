@@ -29,15 +29,23 @@
     <img src="../images/doodle-sticker-goals.svg" class="doodle" style="right: 20vw; bottom: 8vh; width: 60px;">
     <img src="../images/doodle-pin.svg" class="doodle" style="left: 60vw; top: 70vh; width: 20px;">
     <img src="../images/doodle-envelope.svg" class="doodle" style="right: 16vw; top: 80vh; width: 40px; cursor:pointer;" onclick="alert('A message for you!')">
-    <img src="../images/doodle-washi.svg" class="doodle" style="left: 40vw; bottom: 2vh; width: 60px;">
     <img src="../images/qr-music.svg" class="doodle" style="right: 8vw; top: 8vh; width: 60px; cursor:pointer;" onclick="window.open('https://open.spotify.com/', '_blank')">
     <img src="../images/pressed-flower.svg" class="doodle" style="left: 8vw; bottom: 10vh; width: 40px;">
     <img src="../images/doodle-sticker-bestday.svg" class="doodle" style="right: 20vw; top: 80vh; width: 60px;">
+    <img src="../images/handwriting.svg" class="doodle movable" style="right: 10vw; top: 6vh; width: 120px;">
+    <img src="../images/scribble.svg" class="doodle" style="left: 30vw; bottom: 4vh; width: 40px;">
+    <!-- Meaningful stickers -->
+    <div class="doodle movable" style="left: 10vw; top: 12vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;">With you, every day is a blessing</div>
+    <div class="doodle movable" style="right: 10vw; bottom: 12vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">Forever & always 💍</div>
     <!-- Main frame -->
     <div class="page final-page" style="box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
-        <p style="font-family: 'Caveat', cursive; font-size: 2.2em; color: #b388ff; margin-top: 60px;">Thank you for being you. 💖</p>
-        <p style="font-family: 'Patrick Hand', cursive; font-size: 1.7em; color: #ff69b4; margin-bottom: 40px;">So... can I be your boyfriend?</p>
-        <p class="signature" style="font-family: 'Caveat', cursive; color: #b388ff; font-size: 1.3em; text-align: right; margin-right: 40px;">- Your admirer</p>
+        <!-- Story block: My Promise -->
+        <div style="font-family: 'Caveat', cursive; font-size: 2em; color: #b388ff; background: #fffbe7; border-radius: 18px; padding: 28px 32px; margin: 60px auto 32px auto; max-width: 540px; box-shadow: 0 2px 16px #b388ff22; text-align: center;">
+          I really like you. And if I’m going to get in a relationship with someone, I want it to be you.<br><br>
+          I promise to build something real with you, to appreciate you, and to always be honest about how much you mean to me.<br><br>
+          Even though you’re not my girlfriend (yet), I want you to know how much I appreciate you and how much you matter to me.
+        </div>
+        <div class="signature" style="font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.5em; text-align: right; margin-right: 40px;">With all my heart,<br>Tatenda</div>
         <img src="../images/heart.svg" class="heart" alt="Heart" style="position: absolute; left: 20px; top: 20px; width: 40px;">
         <img src="../images/heart.svg" class="heart" alt="Heart" style="position: absolute; right: 40px; bottom: 40px; width: 30px; opacity: 0.7;">
         <div style="position: absolute; left: 10%; top: 70%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(-7deg);">Dummy: Add your own thank you message here!</div>
@@ -50,15 +58,23 @@
         <a href="cover.html" class="next-btn" style="position: absolute; left: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 10;">&#8592; Start Over</a>
         <a href="guestbook.html" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #ff69b4; color: #fffbe7; border-radius: 8px; padding: 10px 32px; text-decoration: none; box-shadow: 0 4px 16px #b388ff55; border: 3px solid #b388ff; transition: background 0.2s, color 0.2s; z-index: 10;">💌 Sign the Guestbook</a>
     </div>
-    <!-- Paper airplane animation -->
-    <div class="paper-airplane-container">
-      <span class="paper-trail">
-        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
-        </svg>
-      </span>
-      <img class="paper-airplane" src="../images/paper-airplane.svg" alt="Paper Airplane">
-    </div>
+    <script>
+      function randomMoveDoodles() {
+        document.querySelectorAll('.doodle.movable').forEach(function(el) {
+          let x = Math.random() * (window.innerWidth - el.width);
+          let y = Math.random() * (window.innerHeight - el.height);
+          el.style.transform = `translate(${x}px, ${y}px)`;
+        });
+      }
+      setInterval(randomMoveDoodles, 3500);
+      function randomizeAirplane() {
+        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
+        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
+          el.style.setProperty('--airplane-top', top);
+        });
+      }
+      randomizeAirplane();
+    </script>
     <script>
         // Floating hearts
         for (let i = 0; i < 12; i++) {
