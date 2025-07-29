@@ -389,4 +389,85 @@ body {
   .doodle {
     z-index: 1 !important;
   }
+  /* Make .page and all content flow vertically, allow scrolling */
+  .page, .final-page {
+    display: block !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    box-shadow: 0 2px 12px #b388ff22 !important;
+  }
+  /* Make h2 and prompt blocks smaller and less margin */
+  .page h2, .final-page h2 {
+    font-size: 1.5em !important;
+    margin-top: 24px !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: none !important;
+  }
+  .page > div, .final-page > div {
+    font-size: 1em !important;
+    padding: 12px 4vw !important;
+    margin: 16px auto 0 auto !important;
+    max-width: 98vw !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 6px #b388ff22 !important;
+  }
+  /* Make screenshot frames and polaroids stack vertically and shrink */
+  .page .screenshot-frame, .page .polaroid {
+    width: 90vw !important;
+    max-width: 98vw !important;
+    height: auto !important;
+    min-width: 0 !important;
+    margin: 12px auto !important;
+    padding: 8px 0 !important;
+    display: block !important;
+    position: static !important;
+    box-shadow: 0 2px 8px #b388ff22 !important;
+  }
+  /* Navigation button: not fixed, full width, smaller font */
+  .next-btn {
+    position: static !important;
+    display: block !important;
+    width: 90vw !important;
+    max-width: 98vw !important;
+    margin: 24px auto 16px auto !important;
+    font-size: 1em !important;
+    padding: 10px 0 !important;
+    border-radius: 8px !important;
+    left: unset !important;
+    right: unset !important;
+    bottom: unset !important;
+    min-width: 0 !important;
+    box-shadow: 0 1px 6px #b388ff22 !important;
+  }
+  /* Doodles: shrink and move to corners if possible */
+  .doodle {
+    max-width: 32px !important;
+    min-width: 16px !important;
+    width: 24px !important;
+    height: auto !important;
+    top: unset !important;
+    bottom: unset !important;
+    left: unset !important;
+    right: unset !important;
+  }
+  /* Remove overflow hidden on body for mobile */
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
+  /* Allow vertical scroll for all pages */
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+  }
 }

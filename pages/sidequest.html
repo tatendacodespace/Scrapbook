@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Quest</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .page { display: block !important; position: relative; z-index: 1; }
+        .doodle { position: fixed; z-index: 2; pointer-events: auto; }
+        .bounce { animation: bounce 1.2s infinite alternate; }
+        @keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body style="background: #fef6e4; overflow: hidden;">
+    <!-- Doodles and stickers outside the frame -->
+    <img src="../images/doodle-stars.svg" class="doodle bounce" style="left: 2vw; top: 2vh; width: 40px;">
+    <img src="../images/doodle-heart.svg" class="doodle" style="right: 4vw; top: 8vh; width: 32px;">
+    <img src="../images/doodle-arrow.svg" class="doodle" style="left: 8vw; bottom: 6vh; width: 50px;">
+    <img src="../images/doodle-flower.svg" class="doodle" style="right: 10vw; bottom: 10vh; width: 32px;">
+    <img src="../images/doodle-sparkle.svg" class="doodle movable" style="left: 50vw; top: 4vh; width: 24px;">
+    <img src="../images/doodle-confetti.svg" class="doodle" style="right: 2vw; top: 60vh; width: 40px;">
+    <!-- Main frame -->
+    <div class="page" style="box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
+        <!-- Scrapbook cover style elements -->
+        <img src="../images/paperclip.svg" style="position: absolute; right: 32px; top: 32px; width: 36px; z-index: 3;">
+        <img src="../images/tape.svg" style="position: absolute; left: 48px; top: 80px; width: 70px; opacity: 0.85; z-index: 3;">
+        <img src="../images/tape.svg" style="position: absolute; right: 60px; bottom: 80px; width: 60px; opacity: 0.7; transform: rotate(12deg); z-index: 3;">
+        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;">
+            <div style="position: absolute; left: 18px; top: 18px; width: calc(100% - 36px); height: calc(100% - 36px); border: 3px solid #ffb6b9; border-radius: 32px 12px 32px 12px/12px 32px 12px 32px; box-shadow: 0 8px 32px #b388ff22; z-index: 1;"></div>
+        </div>
+        <h2 style="font-family: 'Caveat', cursive; color: #b388ff; margin-top: 60px; font-size: 2.6em; letter-spacing: 1px; text-shadow: 1px 2px 0 #fffbe7, 0 2px 12px #b388ff33; z-index: 4; position: relative;">Side Quest!</h2>
+        <div style="font-family: 'Patrick Hand', cursive; font-size: 1.5em; color: #ff69b4; background: #fffbe7; border-radius: 20px; padding: 22px 36px; margin: 40px auto 0 auto; max-width: 540px; box-shadow: 0 2px 16px #b388ff22; text-align: center; border: 2px dashed #b388ff; z-index: 4; position: relative;">Ready for a little adventure? Click below to begin your side quest and unlock a special chapter from our story...</div>
+        <a href="quest.html" class="next-btn" style="position: fixed; left: 50%; bottom: 4vh; transform: translateX(-50%); font-family: 'Patrick Hand', cursive; font-size: 1.3em; background: linear-gradient(90deg, #b388ff 60%, #ffb6b9 100%); color: #fff; border-radius: 10px; padding: 12px 38px; text-decoration: none; z-index: 20; box-shadow: 0 2px 8px #b388ff44; border: none;">Begin Side Quest &rarr;</a>
+    </div>
+</body>
+</html>
