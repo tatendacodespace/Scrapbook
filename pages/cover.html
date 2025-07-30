@@ -72,5 +72,20 @@
         .mobile-only { display: none !important; }
       }
     </style>
-</body>
+    <script>
+      // Only show one layout at a time to prevent duplicate content on mobile
+      document.addEventListener('DOMContentLoaded', function() {
+        var isMobile = window.innerWidth <= 600;
+        var desktopEls = document.querySelectorAll('.desktop-only');
+        var mobileEls = document.querySelectorAll('.mobile-only');
+        if (isMobile) {
+          desktopEls.forEach(function(el) { el.style.display = 'none'; });
+          mobileEls.forEach(function(el) { el.style.display = ''; });
+        } else {
+          desktopEls.forEach(function(el) { el.style.display = ''; });
+          mobileEls.forEach(function(el) { el.style.display = 'none'; });
+        }
+      });
+    </script>
+  </body>
 </html>
