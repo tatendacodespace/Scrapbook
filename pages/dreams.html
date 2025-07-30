@@ -15,57 +15,83 @@
     </style>
 </head>
 <body style="background: #e0f7fa; overflow: hidden;">
-    <!-- Meaningful stickers -->
-    <div class="doodle movable" style="left: 18vw; top: 20vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;"><span style='font-size:0.8em;'>(Jeremiah 29:11)</span></div>
-    <div class="doodle movable" style="right: 8vw; bottom: 10vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">Topic? Blank</div>
-    <!-- Main frame -->
-    <div class="page" style="box-shadow: 0 8px 32px rgba(197,225,165,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
-        <div class="origami" onclick="alert('One day soon!')" style="position: absolute; left: 12%; top: 30%; transform: rotate(-8deg); background: #c5e1a5; color: #b388ff;">Time we haven't met in person</div>
-        <div class="origami" onclick="alert('It will be magical!')" style="position: absolute; right: 15%; top: 55%; transform: rotate(10deg); background: #b388ff; color: #fff;">Gone on a date? Dololo</div>
-        <div class="origami" onclick="alert('Dummy: Add your own dream!')" style="position: absolute; left: 40%; top: 70%; transform: rotate(-5deg); background: #fffbe7; color: #ff69b4;">How many years have we known each other now</div>
-        <!-- Story block: Dreams I have for us -->
-        <div style="position: absolute; right: 8%; top: 10%; max-width: 340px; font-family: 'Caveat', cursive; font-size: 1.5em; color: #b388ff; background: #fffbe7; border-radius: 16px; padding: 18px 24px; box-shadow: 0 2px 12px #b388ff22;">I promise to take care of your heart cause i want it to be you. I promise to be a better Zim man cause i want a South African ID</div>
-        <div style="position: absolute; left: 60%; top: 20%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.5em; transform: rotate(-7deg);"></div>
-        <div style="position: absolute; right: 10%; top: 10%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.2em; transform: rotate(7deg);"></div>
-        <div style="position: absolute; left: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(3deg);">If you try to leave I'll chase you with beef</div>
-        <div class="polaroid" style="position: absolute; left: 18%; top: 30%; transform: rotate(-5deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -5deg;">
-            <img src="../images/ntoki3.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
-            <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;"></div>
-        </div>
-        <div class="polaroid" style="position: absolute; right: 20%; top: 60%; transform: rotate(7deg); width: 160px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.35s; --polaroid-rotate: 7deg;">
-            <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
-            <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Ngathi yi-gwinya ne polony</div>
-        </div>
-        <!-- All interactive buttons/text moved below polaroids for z-index stacking -->
-        <a href="final.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 3;">Next &rarr;</a>
-    </div>
-
-    <!-- Paper airplane SVG animation -->
-    <svg class="paper-airplane-svg" style="--airplane-top: 19vh;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="5,30 55,10 30,35 35,40 55,10 30,55" fill="#fff" stroke="#b388ff" stroke-width="2"/>
-      <polygon points="30,35 35,40 55,10" fill="#b388ff" opacity="0.2"/>
-    </svg>
-    <span class="paper-airplane-trail" style="--airplane-top: 19vh;">
-      <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+    <div class="desktop-only" style="position:relative; min-height:100vh; width:100vw;">
+      <!-- Meaningful stickers -->
+      <div class="doodle movable" style="left: 18vw; top: 20vh; width: 120px; background: #fffbe7; border: 2px dashed #b388ff; border-radius: 18px; padding: 6px 16px; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; box-shadow: 0 2px 8px #b388ff33; position: fixed;"><span style='font-size:0.8em;'>(Jeremiah 29:11)</span></div>
+      <div class="doodle movable" style="right: 8vw; bottom: 10vh; width: 120px; background: #fffbe7; border: 2px solid #ff69b4; border-radius: 18px; padding: 6px 16px; font-family: 'Caveat', cursive; color: #ff69b4; font-size: 1.2em; box-shadow: 0 2px 8px #ff69b433; position: fixed;">Topic? Blank</div>
+      <!-- Main frame -->
+      <div class="page" style="box-shadow: 0 8px 32px rgba(197,225,165,0.10); border: 2px solid #b388ff; position: relative; min-height: 90vh;">
+          <div class="origami" onclick="alert('One day soon!')" style="position: absolute; left: 12%; top: 30%; transform: rotate(-8deg); background: #c5e1a5; color: #b388ff;">Time we haven't met in person</div>
+          <div class="origami" onclick="alert('It will be magical!')" style="position: absolute; right: 15%; top: 55%; transform: rotate(10deg); background: #b388ff; color: #fff;">Gone on a date? Dololo</div>
+          <div class="origami" onclick="alert('Dummy: Add your own dream!')" style="position: absolute; left: 40%; top: 70%; transform: rotate(-5deg); background: #fffbe7; color: #ff69b4;">How many years have we known each other now</div>
+          <!-- Story block: Dreams I have for us -->
+          <div style="position: absolute; right: 8%; top: 10%; max-width: 340px; font-family: 'Caveat', cursive; font-size: 1.5em; color: #b388ff; background: #fffbe7; border-radius: 16px; padding: 18px 24px; box-shadow: 0 2px 12px #b388ff22;">I promise to take care of your heart cause i want it to be you. I promise to be a better Zim man cause i want a South African ID</div>
+          <div style="position: absolute; left: 60%; top: 20%; font-family: 'Caveat', cursive; color: #ffb6b9; font-size: 1.5em; transform: rotate(-7deg);"></div>
+          <div style="position: absolute; right: 10%; top: 10%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.2em; transform: rotate(7deg);"></div>
+          <div style="position: absolute; left: 20%; top: 80%; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; transform: rotate(3deg);">If you try to leave I'll chase you with beef</div>
+          <div class="polaroid" style="position: absolute; left: 18%; top: 30%; transform: rotate(-5deg); width: 180px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.15s; --polaroid-rotate: -5deg;">
+              <img src="../images/ntoki3.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+              <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;"></div>
+          </div>
+          <div class="polaroid" style="position: absolute; right: 20%; top: 60%; transform: rotate(7deg); width: 160px; box-shadow: 0 8px 24px #b388ff55, 0 0 0 8px #fffbe7; border: 2px solid #e0c3fc; border-radius: 12px 28px 18px 8px/18px 12px 28px 8px; overflow: visible; --polaroid-delay: 0.35s; --polaroid-rotate: 7deg;">
+              <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+              <div style="position: absolute; bottom: 8px; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1.1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Ngathi yi-gwinya ne polony</div>
+          </div>
+          <!-- All interactive buttons/text moved below polaroids for z-index stacking -->
+          <a href="final.html" class="next-btn" style="position: absolute; right: 8%; bottom: 8%; font-family: 'Patrick Hand', cursive; font-size: 1.2em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; z-index: 3;">Next &rarr;</a>
+      </div>
+      <!-- Paper airplane SVG animation -->
+      <svg class="paper-airplane-svg" style="--airplane-top: 19vh;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="5,30 55,10 30,35 35,40 55,10 30,55" fill="#fff" stroke="#b388ff" stroke-width="2"/>
+        <polygon points="30,35 35,40 55,10" fill="#b388ff" opacity="0.2"/>
       </svg>
-    </span>
+      <span class="paper-airplane-trail" style="--airplane-top: 19vh;">
+        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+        </svg>
+      </span>
+    </div>
+    <!-- Mobile-only layout -->
+    <div class="mobile-only" style="display:none; flex-direction: column; align-items: center; width: 100%; max-width: 420px; margin: 0 auto; box-shadow: 0 8px 32px rgba(197,225,165,0.10); border: 2px solid #b388ff; min-height: 90vh;">
+      <h2 style="font-family: 'Caveat', cursive; color: #b388ff; margin-top: 24px; font-size: 2em; text-align: center;">Dreams We'll Make Real</h2>
+      <div style="font-family: 'Caveat', cursive; font-size: 1.1em; color: #b388ff; background: #fffbe7; border-radius: 14px; padding: 12px 6vw; margin: 12px auto 0 auto; max-width: 98vw; box-shadow: 0 2px 12px #b388ff22; text-align: center;">I promise to take care of your heart cause i want it to be you. I promise to be a better Zim man cause i want a South African ID</div>
+      <div class="origami" style="margin: 12px auto 0 auto; background: #c5e1a5; color: #b388ff; font-family: 'Patrick Hand', cursive; font-size: 1em; border-radius: 8px; padding: 8px 12px; max-width: 320px; text-align: center;">Time we haven't met in person</div>
+      <div class="origami" style="margin: 8px auto 0 auto; background: #b388ff; color: #fff; font-family: 'Patrick Hand', cursive; font-size: 1em; border-radius: 8px; padding: 8px 12px; max-width: 320px; text-align: center;">Gone on a date? Dololo</div>
+      <div class="origami" style="margin: 8px auto 0 auto; background: #fffbe7; color: #ff69b4; font-family: 'Patrick Hand', cursive; font-size: 1em; border-radius: 8px; padding: 8px 12px; max-width: 320px; text-align: center;">How many years have we known each other now</div>
+      <div class="polaroid" style="width: 90vw; max-width: 320px; margin: 18px auto 0 auto;">
+        <img src="../images/ntoki3.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+        <div style="position: relative; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #b388ff; font-size: 1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;"></div>
+      </div>
+      <div class="polaroid" style="width: 90vw; max-width: 320px; margin: 12px auto 0 auto;">
+        <img src="../images/ntoki4.jpg" alt="Her Polaroid" style="width: 100%; border-radius: 8px; filter: drop-shadow(2px 6px 8px #b388ff44) grayscale(10%) contrast(1.1);">
+        <div style="position: relative; bottom: 0; left: 0; width: 100%; text-align: center; font-family: 'Patrick Hand', cursive; color: #ff69b4; font-size: 1em; background: rgba(255,255,255,0.7); border-radius: 0 0 8px 8px;">Ngathi yi-gwinya ne polony</div>
+      </div>
+      <a href="final.html" class="next-btn" style="display: block; margin: 24px auto 0 auto; font-family: 'Patrick Hand', cursive; font-size: 1em; background: #b388ff; color: #fff; border-radius: 8px; padding: 10px 18px; text-decoration: none; width: 90vw; max-width: 320px; text-align: center;">Next &rarr;</a>
+    </div>
+    <style>
+      @media (max-width: 600px) {
+        .desktop-only { display: none !important; }
+        .mobile-only { display: flex !important; }
+      }
+      @media (min-width: 601px) {
+        .desktop-only { display: initial !important; }
+        .mobile-only { display: none !important; }
+      }
+    </style>
     <script>
-      function randomMoveDoodles() {
-        document.querySelectorAll('.doodle.movable').forEach(function(el) {
-          let x = Math.random() * (window.innerWidth - el.width);
-          let y = Math.random() * (window.innerHeight - el.height);
-          el.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      }
-      setInterval(randomMoveDoodles, 3500);
-      function randomizeAirplane() {
-        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
-        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
-          el.style.setProperty('--airplane-top', top);
-        });
-      }
-      randomizeAirplane();
+      // Only show one layout at a time to prevent duplicate content on mobile
+      document.addEventListener('DOMContentLoaded', function() {
+        var isMobile = window.innerWidth <= 600;
+        var desktopEls = document.querySelectorAll('.desktop-only');
+        var mobileEls = document.querySelectorAll('.mobile-only');
+        if (isMobile) {
+          desktopEls.forEach(function(el) { el.style.display = 'none'; });
+          mobileEls.forEach(function(el) { el.style.display = ''; });
+        } else {
+          desktopEls.forEach(function(el) { el.style.display = ''; });
+          mobileEls.forEach(function(el) { el.style.display = 'none'; });
+        }
+      });
     </script>
 </body>
 </html>

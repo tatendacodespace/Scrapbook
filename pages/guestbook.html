@@ -29,63 +29,108 @@
     </style>
 </head>
 <body>
-    <!-- Paper airplane SVG animation -->
-    <svg class="paper-airplane-svg" style="--airplane-top: 16vh;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="5,30 55,10 30,35 35,40 55,10 30,55" fill="#fff" stroke="#b388ff" stroke-width="2"/>
-      <polygon points="30,35 35,40 55,10" fill="#b388ff" opacity="0.2"/>
-    </svg>
-    <span class="paper-airplane-trail" style="--airplane-top: 16vh;">
-      <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+    <div class="desktop-only" style="position:relative; min-height:100vh; width:100vw;">
+      <!-- Paper airplane SVG animation -->
+      <svg class="paper-airplane-svg" style="--airplane-top: 16vh;" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="5,30 55,10 30,35 35,40 55,10 30,55" fill="#fff" stroke="#b388ff" stroke-width="2"/>
+        <polygon points="30,35 35,40 55,10" fill="#b388ff" opacity="0.2"/>
       </svg>
-    </span>
-    <script>
-      function randomMoveDoodles() {
-        document.querySelectorAll('.doodle.movable').forEach(function(el) {
-          let x = Math.random() * (window.innerWidth - el.width);
-          let y = Math.random() * (window.innerHeight - el.height);
-          el.style.transform = `translate(${x}px, ${y}px)`;
-        });
-      }
-      setInterval(randomMoveDoodles, 3500);
-      function randomizeAirplane() {
-        let top = Math.floor(Math.random() * 60 + 10) + 'vh';
-        document.querySelectorAll('.paper-airplane-svg, .paper-airplane-trail').forEach(function(el) {
-          el.style.setProperty('--airplane-top', top);
-        });
-      }
-      randomizeAirplane();
-    </script>
-    <div class="guestbook-form">
-        <label for="message">Leave a message for me:</label>
-        <textarea id="message" placeholder="Type your message here..."></textarea>
-        <button onclick="saveMessage()">Send</button>
-        <div class="guestbook-messages" id="messages"></div>
+      <span class="paper-airplane-trail" style="--airplane-top: 16vh;">
+        <svg width="120vw" height="20" viewBox="0 0 600 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 10 Q 150 0 300 10 Q 450 20 600 10" stroke="#b388ff" stroke-width="3" stroke-dasharray="10 8" fill="none"/>
+        </svg>
+      </span>
+      <div class="guestbook-form">
+          <label for="message">Leave a message for me:</label>
+          <textarea id="message" placeholder="Type your message here..."></textarea>
+          <button onclick="saveMessage()">Send</button>
+          <div class="guestbook-messages" id="messages"></div>
+      </div>
+      <a href="cover.html" style="display:block; margin:32px auto 0 auto; text-align:center; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; width: fit-content;">Back to Scrapbook</a>
     </div>
-    <a href="cover.html" style="display:block; margin:32px auto 0 auto; text-align:center; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; width: fit-content;">Back to Scrapbook</a>
+    <!-- Mobile-only layout -->
+    <div class="mobile-only" style="display:none; flex-direction: column; align-items: center; width: 100%; max-width: 420px; margin: 0 auto; box-shadow: 0 8px 32px rgba(255,105,180,0.10); border: 2px solid #b388ff; min-height: 90vh;">
+      <h2 style="font-family: 'Caveat', cursive; color: #b388ff; margin-top: 24px; font-size: 2em; text-align: center;">Guestbook</h2>
+      <div class="guestbook-form" style="margin: 24px auto; max-width: 98vw; background: #fff; border-radius: 16px; box-shadow: 0 4px 16px #b388ff33; padding: 18px; position: relative;">
+        <label for="message-mobile">Leave a message for me:</label>
+        <textarea id="message-mobile" placeholder="Type your message here..." style="width: 100%; min-height: 80px; border-radius: 8px; border: 1px solid #b388ff; font-family: 'Caveat', cursive; font-size: 1.2em; padding: 8px; margin-top: 8px;"></textarea>
+        <button id="send-mobile" style="margin-top: 16px; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border: none; border-radius: 8px; padding: 10px 24px; cursor: pointer;">Send</button>
+        <div class="guestbook-messages" id="messages-mobile"></div>
+      </div>
+      <a href="cover.html" style="display:block; margin:12px auto 0 auto; text-align:center; font-family: 'Patrick Hand', cursive; font-size: 1.1em; background: #ffb6b9; color: #fff; border-radius: 8px; padding: 10px 24px; text-decoration: none; width: fit-content;">Back to Scrapbook</a>
+    </div>
+    <style>
+      @media (max-width: 600px) {
+        .desktop-only { display: none !important; }
+        .mobile-only { display: flex !important; }
+      }
+      @media (min-width: 601px) {
+        .desktop-only { display: initial !important; }
+        .mobile-only { display: none !important; }
+      }
+    </style>
     <script>
-        function saveMessage() {
-            const msg = document.getElementById('message').value.trim();
+      // Only show one layout at a time to prevent duplicate content on mobile
+      document.addEventListener('DOMContentLoaded', function() {
+        var isMobile = window.innerWidth <= 600;
+        var desktopEls = document.querySelectorAll('.desktop-only');
+        var mobileEls = document.querySelectorAll('.mobile-only');
+        if (isMobile) {
+          desktopEls.forEach(function(el) { el.style.display = 'none'; });
+          mobileEls.forEach(function(el) { el.style.display = ''; });
+        } else {
+          desktopEls.forEach(function(el) { el.style.display = ''; });
+          mobileEls.forEach(function(el) { el.style.display = 'none'; });
+        }
+        // Mobile guestbook logic
+        var sendBtn = document.getElementById('send-mobile');
+        var msgInput = document.getElementById('message-mobile');
+        var msgList = document.getElementById('messages-mobile');
+        function renderMessagesMobile() {
+          let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
+          msgList.innerHTML = '';
+          messages.forEach(m => {
+            const div = document.createElement('div');
+            div.className = 'guestbook-message';
+            div.textContent = m;
+            msgList.appendChild(div);
+          });
+        }
+        if(sendBtn && msgInput && msgList) {
+          sendBtn.onclick = function() {
+            const msg = msgInput.value.trim();
             if (!msg) return;
             let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
             messages.push(msg);
             localStorage.setItem('guestbook', JSON.stringify(messages));
-            document.getElementById('message').value = '';
-            renderMessages();
+            msgInput.value = '';
+            renderMessagesMobile();
+          };
+          renderMessagesMobile();
         }
-        function renderMessages() {
-            let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
-            const container = document.getElementById('messages');
-            container.innerHTML = '';
-            messages.forEach(m => {
-                const div = document.createElement('div');
-                div.className = 'guestbook-message';
-                div.textContent = m;
-                container.appendChild(div);
-            });
-        }
+      });
+      // Desktop guestbook logic
+      function saveMessage() {
+        const msg = document.getElementById('message').value.trim();
+        if (!msg) return;
+        let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
+        messages.push(msg);
+        localStorage.setItem('guestbook', JSON.stringify(messages));
+        document.getElementById('message').value = '';
         renderMessages();
+      }
+      function renderMessages() {
+        let messages = JSON.parse(localStorage.getItem('guestbook') || '[]');
+        const container = document.getElementById('messages');
+        container.innerHTML = '';
+        messages.forEach(m => {
+          const div = document.createElement('div');
+          div.className = 'guestbook-message';
+          div.textContent = m;
+          container.appendChild(div);
+        });
+      }
+      renderMessages();
     </script>
-
 </body>
 </html>
