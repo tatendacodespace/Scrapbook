@@ -1,10 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=pages/cover.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scrapbook</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(120deg, #f9c5d1 60%, #fef6e4 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Patrick Hand', cursive;
+      }
+      .reveal-card {
+        background: #fffbe7;
+        border-radius: 24px;
+        box-shadow: 0 8px 32px rgba(255,105,180,0.15);
+        padding: 40px 32px 32px 32px;
+        max-width: 420px;
+        width: 92vw;
+        text-align: center;
+        border: 3px dashed #ffb6b9;
+        position: relative;
+      }
+      .reveal-card h1 {
+        font-family: 'Caveat', cursive;
+        color: #ff69b4;
+        font-size: 2.2em;
+        margin-bottom: 18px;
+      }
+      .reveal-card p {
+        color: #b388ff;
+        font-size: 1.2em;
+        margin-bottom: 32px;
+      }
+      .enter-btn {
+        font-family: 'Patrick Hand', cursive;
+        font-size: 1.2em;
+        background: #fffbe7;
+        color: #ff69b4;
+        border: 2px solid #ffb6b9;
+        border-radius: 12px;
+        box-shadow: 2px 4px 12px #ffb6b9;
+        padding: 14px 36px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        display: block;
+      }
+      .enter-btn:hover {
+        background: #ffb6b9;
+        color: #fffbe7;
+      }
+      @media (max-width: 600px) {
+        .reveal-card {
+          padding: 24px 6vw 24px 6vw;
+          max-width: 98vw;
+        }
+        .reveal-card h1 {
+          font-size: 1.4em;
+        }
+        .reveal-card p {
+          font-size: 1em;
+        }
+        .enter-btn {
+          font-size: 1em;
+          padding: 12px 0;
+        }
+      }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="pages/cover.html">click here</a>.</p>
+  <div class="reveal-card">
+    <h1>Wait... Surprise!</h1>
+    <p>Everything I told you just now on WhatsApp was a lie (sorry).<br><br>This is actually for you.<br><b>Yes, you Ntokozo.</b></p>
+    <a href="pages/cover.html"><button class="enter-btn">Enter the Scrapbook</button></a>
+  </div>
 </body>
 </html>
